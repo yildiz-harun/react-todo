@@ -1,10 +1,12 @@
-function Input() {
+import React from "react";
+
+const Input = () => {
   return (
     <form>
-      <input type="text" name="todo" />
-      <button type="submit">Add</button>
+      <input type="text" />
+      <button type="submit">add</button>
     </form>
   );
-}
+};
 
 export default Input;
