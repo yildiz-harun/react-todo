@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "./components/Input";
 import Todo from "./components/Todo";
+import style from "./style/style.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -34,7 +35,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="App">
       <Input handleSubmit={handleSubmit} />
       {todos.map((todo) => {
         return (
@@ -48,7 +49,7 @@ function App() {
           />
         );
       })}
-    </>
+    </div>
   );
 }
 export default App;

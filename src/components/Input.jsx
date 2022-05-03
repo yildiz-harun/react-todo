@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const Input = ({ handleSubmit }) => {
   const [newContent, setNewContent] = useState("");
   return (
-    <form>
+    <form className="item">
       <input
         type="text"
         value={newContent}

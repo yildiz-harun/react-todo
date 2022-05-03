@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { FiEdit, FiSave, FiTrash2 } from "react-icons/fi";
 
 const Todo = ({ id, content, handleDelete, handleUpdate, handleSave }) => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [newContent, setNewContent] = useState("");
   return (
-    <div>
+    <div className="Todo">
       <button
         onClick={() => {
           handleDelete(id);
         }}
       >
-        delete
+        <FiTrash2 />
       </button>
       {isUpdate ? (
         <>
@@ -20,7 +21,7 @@ const Todo = ({ id, content, handleDelete, handleUpdate, handleSave }) => {
               handleSave(id, newContent);
             }}
           >
-            save
+            <FiSave />
           </button>
           <input
             type="text"
@@ -39,9 +40,9 @@ const Todo = ({ id, content, handleDelete, handleUpdate, handleSave }) => {
               setNewContent(content);
             }}
           >
-            update
+            <FiEdit />
           </button>
-          <span>{content}</span>
+          <div className="content">{content}</div>
         </>
       )}
     </div>
